@@ -116,35 +116,49 @@ def verdict(checks: dict) -> tuple[str, bool]:
     return "EXPOSED and proxy down - worst of both", False
 
 
+# Every row of the report is "<label> : <value>". The probe rows embed an address
+# whose length is not known until runtime, so the padding has to be applied to the
+# built label rather than written into the format string - an address longer than
+# 127.0.0.1 pushed the colon out of the column and the report arrived crooked.
+LABEL_WIDTH = 30
+
+
+def _row(label: str, value: str) -> str:
+    return f"{label:<{LABEL_WIDTH}}: {value}"
+
+
 def render(checks: dict) -> str:
     summary, _ = verdict(checks)
     outside = checks["routable_address"]
+    remote = checks.get("remote_host")
+
+    loopback = checks["app_reachable_on_loopback"]
+    outside_app = checks["app_reachable_from_outside"]
+    outside_proxy = checks["proxy_reachable_from_outside"]
+    serves = checks["proxy_serves_app"]
+
+    def state(probe: dict) -> str:
+        return "OPEN" if probe["open"] else "refused"
+
     lines = [
         "External port verification",
         "=" * 60,
-        (f"Probing host                  : {outside} (from this machine)"
-         if checks.get("remote_host") else
-         f"Probing from routable address : {outside}"),
-        f"Application port              : {checks['app_port']}",
-        f"Proxy port                    : {checks['proxy_port']}",
+        _row("Probing host", f"{outside} (from this machine)") if remote else
+        _row("Probing from routable address", outside),
+        _row("Application port", str(checks["app_port"])),
+        _row("Proxy port", str(checks["proxy_port"])),
         "",
-        f"docker port hardening-app     : {checks['docker_publish_app']}",
-        f"docker port hardening-proxy   : {checks['docker_publish_proxy']}",
+        _row("docker port hardening-app", checks["docker_publish_app"]),
+        _row("docker port hardening-proxy", checks["docker_publish_proxy"]),
         "",
-        (f"app  on 127.0.0.1:{checks['app_port']:<6}      : not applicable "
-         f"({checks['app_reachable_on_loopback']['detail']})"
-         if checks.get("remote_host") else
-         f"app  on 127.0.0.1:{checks['app_port']:<6}      : "
-         f"{'OPEN' if checks['app_reachable_on_loopback']['open'] else 'refused'}"
-         f" ({checks['app_reachable_on_loopback']['detail']})"),
-        f"app  on {outside}:{checks['app_port']:<6} : "
-        f"{'OPEN' if checks['app_reachable_from_outside']['open'] else 'refused'}"
-        f" ({checks['app_reachable_from_outside']['detail']})",
-        f"proxy on {outside}:{checks['proxy_port']:<6} : "
-        f"{'OPEN' if checks['proxy_reachable_from_outside']['open'] else 'refused'}",
-        f"proxy serves the app          : "
-        f"{'yes' if checks['proxy_serves_app']['ok'] else 'no'}"
-        f" ({checks['proxy_serves_app']['first_line']})",
+        _row(f"app  on 127.0.0.1:{checks['app_port']}",
+             f"not applicable ({loopback['detail']})" if remote else
+             f"{state(loopback)} ({loopback['detail']})"),
+        _row(f"app  on {outside}:{checks['app_port']}",
+             f"{state(outside_app)} ({outside_app['detail']})"),
+        _row(f"proxy on {outside}:{checks['proxy_port']}", state(outside_proxy)),
+        _row("proxy serves the app",
+             f"{'yes' if serves['ok'] else 'no'} ({serves['first_line']})"),
         "",
         f"VERDICT: {summary}",
     ]
