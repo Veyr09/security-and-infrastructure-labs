@@ -1,0 +1,8 @@
+name  : Krystian
+tag   : release
+roles : 3 declared, 3 seen
+        - admin
+        - deploy
+        - oncall
+note  : nightly build
+first : nightly build (13 characters)

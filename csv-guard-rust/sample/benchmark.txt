@@ -1,0 +1,19 @@
+generating 5000000 rows ...
+input size: 196M
+
+===== csvguard (Rust) =====
+rows read      5000000
+rows clean     4750000
+rows rejected  250000
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.66
+	Maximum resident set size (kbytes): 2308
+
+===== python csv module, same rules =====
+rows read      5000000
+rows clean     4750000
+rows rejected  250000
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.99
+	Maximum resident set size (kbytes): 15664
+
+outputs identical:
+  yes

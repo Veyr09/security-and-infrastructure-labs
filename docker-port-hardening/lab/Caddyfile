@@ -1,0 +1,8 @@
+# The upstream is the service name on the compose network, not the host port.
+# That distinction is the whole point: if this said host.docker.internal:8080 or
+# 127.0.0.1:8080, binding the publish to loopback would take the site down with
+# the port.
+:80 {
+	reverse_proxy app:80
+	header -Server
+}

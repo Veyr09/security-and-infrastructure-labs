@@ -1,0 +1,20 @@
+{
+	admin off
+	auto_https off
+}
+
+:80 {
+	@tenant-a host tenant-a.localhost
+	handle @tenant-a {
+		reverse_proxy app-a:8000
+	}
+
+	@tenant-b host tenant-b.localhost
+	handle @tenant-b {
+		reverse_proxy app-b:8000
+	}
+
+	handle {
+		respond "unknown tenant" 404
+	}
+}

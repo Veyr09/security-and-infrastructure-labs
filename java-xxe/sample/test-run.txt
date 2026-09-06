@@ -1,0 +1,27 @@
+javac 21.0.12.1
+
+a well-formed order, which both readers must still accept
+  ok   vulnerable/DOM  accepts good.xml
+  ok   secure/DOM      accepts good.xml
+  ok   vulnerable/StAX accepts good.xml
+  ok   secure/StAX     accepts good.xml
+
+CWE-611, an inline entity reading a local file
+  ok   vulnerable/DOM  discloses secret.txt (82 chars of it)
+  ok   secure/DOM      refuses the DOCTYPE
+  ok   vulnerable/StAX discloses secret.txt (82 chars of it)
+  ok   secure/StAX     leaves the entity undeclared
+
+CWE-611, the entity hidden in an external DTD
+  ok   vulnerable/DOM  fetches leak.dtd and discloses (82 chars of it)
+  ok   secure/DOM      refuses the DOCTYPE
+  ok   vulnerable/StAX fetches leak.dtd and discloses (82 chars of it)
+  ok   secure/StAX     leaves the entity undeclared
+
+CWE-776, entity expansion, which the JDK already limits by itself
+  ok   vulnerable/DOM  stopped by the JDK's own 64000 limit
+  ok   vulnerable/StAX stopped by the JDK's own 64000 limit
+  ok   secure/DOM      refuses earlier, at the DOCTYPE
+  ok   secure/StAX     leaves the entity undeclared
+
+16 passed, 0 failed

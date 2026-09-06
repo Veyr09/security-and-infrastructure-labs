@@ -1,0 +1,51 @@
+=================================================================
+==729==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x77b933be0060 at pc 0x7b89358bd2a9 bp 0x7ffe04ac9860 sp 0x7ffe04ac9018
+WRITE of size 81 at 0x77b933be0060 thread T0
+    #0 0x7b89358bd2a8 in strcpy ../../../../src/libsanitizer/asan/asan_interceptors.cpp:575
+    #1 0x59254a43bad3 in strcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:93
+    #2 0x59254a43bad3 in main /home/meiz/labs/c-memory-safety/vulnerable/hdrparse.c:66
+    #3 0x7b8934c2a600  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a600) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #4 0x7b8934c2a717 in __libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a717) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #5 0x59254a43b484 in _start (/home/meiz/labs/c-memory-safety/build/hdrparse-vulnerable+0x3484) (BuildId: fba82be5158d9b83ef2fd82c253b4bb02db4dca0)
+
+0x77b933be0060 is located 0 bytes after 32-byte region [0x77b933be0040,0x77b933be0060)
+allocated by thread T0 here:
+    #0 0x7b893592b60f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x59254a43b7f5 in main /home/meiz/labs/c-memory-safety/vulnerable/hdrparse.c:49
+    #2 0x7b8934c2a600  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a600) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #3 0x7b8934c2a717 in __libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a717) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #4 0x59254a43b484 in _start (/home/meiz/labs/c-memory-safety/build/hdrparse-vulnerable+0x3484) (BuildId: fba82be5158d9b83ef2fd82c253b4bb02db4dca0)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /usr/include/x86_64-linux-gnu/bits/string_fortified.h:93 in strcpy
+Shadow bytes around the buggy address:
+  0x77b933bdfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x77b933bdfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x77b933bdfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x77b933bdff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x77b933bdff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x77b933be0000: fa fa 00 00 00 fa fa fa 00 00 00 00[fa]fa fa fa
+  0x77b933be0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x77b933be0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x77b933be0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x77b933be0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x77b933be0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==729==ABORTING

@@ -1,0 +1,12 @@
+stack: shared-vulnerable
+
+  ok     cross_tenant_read: expected True, got True
+           tenant-a read entry 4: tenant-b / M. Dubois / Roofing, site 3
+  ok     token_replay: expected True, got True
+           tenant-b accepted tenant-a's token: {"tenant": "tenant-b", "session": {"tenant": "tenant-a", "user": "probe"}}
+  ok     db_path_open: expected True, got True
+           app-a -> db:5432 : connected
+  ok     only_proxy_published: expected True, got True
+           published: {"proxy": ["127.0.0.1:8080"]}
+
+all 4 probes match what this stack claims

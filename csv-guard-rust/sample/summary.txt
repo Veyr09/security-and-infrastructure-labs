@@ -1,0 +1,11 @@
+rows read      200
+rows clean     190
+rows rejected  10
+failures by column:
+  notes                1
+  order_id             1
+  ordered_on           3
+  price                2
+  qty                  2
+  status               3
+exit code: 1

@@ -1,0 +1,13 @@
+line,column,value,reason
+21,qty,"1,000","not a whole number: ""1,000"""
+41,price,$130.60,"not a number: ""$130.60"""
+61,ordered_on,2026-02-30,"day 30 does not exist in that month: ""2026-02-30"""
+81,status,PAID,"""PAID"" is not one of new, paid, void"
+101,ordered_on,,"row has 3 fields, expected at least 4"
+101,status,,"row has 3 fields, expected at least 5"
+101,notes,,"row has 3 fields, expected at least 6"
+121,order_id,,required but empty
+141,qty,"1,000","not a whole number: ""1,000"""
+161,price,$324.11,"not a number: ""$324.11"""
+181,ordered_on,2026-02-30,"day 30 does not exist in that month: ""2026-02-30"""
+201,status,PAID,"""PAID"" is not one of new, paid, void"

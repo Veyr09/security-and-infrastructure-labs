@@ -1,0 +1,7 @@
+Name: Krystian
+Tag: release
+Roles: 3
+Role: admin
+Role: deploy
+Role: oncall
+Note: nightly build

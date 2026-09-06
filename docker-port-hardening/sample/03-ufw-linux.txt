@@ -1,0 +1,108 @@
+ufw versus a Docker-published port: what actually happens
+=========================================================
+
+Host under test : Ubuntu on WSL2, kernel 6.18.33.2, eth0 172.26.9.179
+Docker          : 29.1.3 (native daemon, not Docker Desktop)
+ufw             : 0.36.2
+Probing host    : the Windows machine, a separate host reaching 172.26.9.179
+Container       : traefik/whoami:v1.10, published on port 8080
+Date            : 2026-09-06
+
+Every probe below is run from the Windows host, never from the Linux box.
+
+
+1. BASELINE - published on every interface, no firewall
+-------------------------------------------------------
+  docker port      80/tcp -> 0.0.0.0:8080
+                   80/tcp -> [::]:8080
+  ss -tlnp         LISTEN 0.0.0.0:8080  users:(("docker-proxy",pid=801))
+                   LISTEN    [::]:8080  users:(("docker-proxy",pid=807))
+
+  PROBE  tcp  172.26.9.179:8080 -> OPEN (connected)
+         http 172.26.9.179:8080 -> HTTP 200 (Hostname: cbfa99ca5ffb)
+
+
+2. ufw ENABLED, PORT DENIED, DOCKER'S DEFAULT USERLAND PROXY
+------------------------------------------------------------
+  ufw status       8080/tcp       DENY IN   Anywhere
+                   8080/tcp (v6)  DENY IN   Anywhere (v6)
+  iptables -S ufw-user-input
+                   -A ufw-user-input -p tcp -m tcp --dport 8080 -j DROP
+
+  PROBE  tcp  172.26.9.179:8080 -> blocked (TimeoutError)
+         http 172.26.9.179:8080 -> no HTTP (URLError)
+
+  ufw WORKED. With the userland proxy on, the published port is an ordinary
+  host socket held by docker-proxy, so packets arrive in the filter INPUT
+  chain where ufw's rules live.
+
+
+3. SAME ufw RULE, USERLAND PROXY DISABLED
+------------------------------------------
+  /etc/docker/daemon.json   { "userland-proxy": false }
+
+  docker port      80/tcp -> 0.0.0.0:8080
+  ufw status       8080/tcp       DENY   Anywhere        <- rule still there
+                   8080/tcp (v6)  DENY   Anywhere (v6)
+
+  iptables -t nat -S PREROUTING
+                   -A PREROUTING -m addrtype --dst-type LOCAL -j DOCKER
+  iptables -t nat -S DOCKER
+                   -A DOCKER -p tcp -m tcp --dport 8080 -j DNAT --to-destination 172.17.0.2:80
+  iptables -S DOCKER
+                   -A DOCKER -d 172.17.0.2/32 ! -i docker0 -o docker0 -p tcp -m tcp --dport 80 -j ACCEPT
+
+  PROBE  tcp  172.26.9.179:8080 -> OPEN (connected)
+         http 172.26.9.179:8080 -> HTTP 200 (Hostname: f09e58e9585e)
+
+  ufw DID NOT WORK. The packet is DNAT'd in nat PREROUTING to the container
+  address, so it is routed rather than delivered locally: it goes through
+  FORWARD, not INPUT, and ufw's INPUT rule is never consulted. The DENY sits
+  in the table looking correct while the port answers the internet.
+
+  iptables -S FORWARD, in order:
+                   -P FORWARD DROP
+                   -A FORWARD -j DOCKER-USER          <- reached first
+                   -A FORWARD -j DOCKER-FORWARD
+                   -A FORWARD -j ufw-before-logging-forward
+                   -A FORWARD -j ufw-before-forward
+                   ...
+
+
+4. THE RULE THAT DOES APPLY: DOCKER-USER
+-----------------------------------------
+  iptables -I DOCKER-USER -p tcp --dport 8080 -j DROP
+  iptables -S DOCKER-USER
+                   -A DOCKER-USER -p tcp -m tcp --dport 8080 -j DROP
+
+  PROBE  tcp  172.26.9.179:8080 -> blocked (TimeoutError)
+
+  DOCKER-USER is evaluated before Docker's own chain, so a rule there is
+  authoritative over container traffic. This is where a firewall rule has to
+  live if it must hold regardless of how the port is published.
+
+
+5. THE ACTUAL FIX: BIND THE PUBLISH TO LOOPBACK
+------------------------------------------------
+  ports: - "127.0.0.1:8080:80"
+
+  docker port      80/tcp -> 127.0.0.1:8080     <- no 0.0.0.0, no [::]
+  ss -tlnp         LISTEN 127.0.0.1:8080  users:(("dockerd",pid=345))
+
+  PROBE  tcp  172.26.9.179:8080 -> blocked (TimeoutError)
+
+  Nothing is listening on a routable address, so there is no packet for any
+  firewall to decide about. This holds whatever the userland-proxy setting is,
+  which is why it is the change to make rather than the rule to add.
+
+
+CONCLUSION
+----------
+"ufw does not protect Docker published ports" is repeated widely and is
+conditional, not universal. It is false in Docker's default configuration and
+true once the userland proxy is off. Both were measured here from a separate
+host rather than assumed.
+
+The safe order of work does not depend on knowing which configuration you are
+in: bind the publish to loopback, put any firewall rule that must hold in
+DOCKER-USER, and verify from another machine afterwards.

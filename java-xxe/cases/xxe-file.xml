@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order [
+  <!ENTITY leak SYSTEM "secret.txt">
+]>
+<order id="1042">
+  <customer>&leak;</customer>
+  <total>119.50</total>
+</order>

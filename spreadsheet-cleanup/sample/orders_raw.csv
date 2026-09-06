@@ -1,0 +1,312 @@
+order_id,order_date,customer,email,category,quantity,unit_price
+ORD-0065,10 Apr 2026,Acme  Corp, orders@acmecorp.com ,software,15,"$2,415.52"
+ORD-0198,06.02.2026,Acme  Corp,ORDERS@acmecorp.com,electronics,3,USD 623.64
+ORD-0103,10 Feb 2026,Lumen Print  ,orders@lumenprint.com,Services ,3,TBD
+ORD-0203,"February 14, 2026",Harbor Lights, orders@harborlights.com ,FURNITURE,3,"USD 1,446.78"
+ORD-0254,03.02.2026,  Harbor Lights,ORDERS@harborlights.com,Services,18,"USD 1,217.09"
+ORD-0020,19/05/2026,Delta  Freight,ORDERS@deltafreight.com,SOFTWARE,15,$ 2363.28
+ORD-0115,02 Apr 2026,  Evergreen Foods,orders@evergreenfoods.com,Office ,19,"$1,792.29"
+ORD-0040,24.04.2026,Cobalt  Studio,ORDERS@cobaltstudio.com,Services,4,$202.24
+ORD-0297,"March 10, 2026",EVERGREEN FOODS,orders@evergreenfoods.com,Office ,9,"USD 1,108.89"
+ORD-0245,"June 06, 2026",  Cobalt Studio, orders@cobaltstudio.com ,Furniture,13,1759.41
+ORD-0089,18.03.2026,  Harbor Lights,ORDERS@harborlights.com,Services,20,1945.09
+ORD-0228,2026-06-26,Lumen Print  ,ORDERS@lumenprint.com,furniture,2,$ 1534.67
+ORD-0052,2026-05-21,granite tools,ORDERS@granitetools.com,Office ,19,"USD 1,595.32"
+ORD-0095,14 Apr 2026,Lumen Print  , orders@lumenprint.com ,Software ,3,1572.71
+ORD-0290,06/05/2026,harbor lights, orders@harborlights.com ,Software ,6,$ 1786.77
+ORD-0130,2026-06-17,  Granite Tools, orders@granitetools.com ,SOFTWARE,2,"USD 1,814.52"
+ORD-0274,2026-02-07,lumen print, orders@lumenprint.com ,Services ,99,$404.53
+ORD-0120,"June 18, 2026",acme corp,orders@acmecorp.com,Services,20,$ 1958.42
+ORD-0145,2026-04-19,kestrel media, orders@kestrelmedia.com ,FURNITURE,4,"$1,519.97"
+ORD-0241,17/04/2026,Cobalt Studio,ORDERS@cobaltstudio.com,software,10,2303.32
+ORD-0247,26 Mar 2026,Evergreen Foods  , orders@evergreenfoods.com ,Services,9,"USD 1,718.59"
+ORD-0001,2026-01-29,Kestrel  Media,ORDERS@kestrelmedia.com,office,5,1935.61
+ORD-0206,2026-01-23,juniper labs,ORDERS@juniperlabs.com,Software ,99,2163.33
+ORD-0011,"June 17, 2026",  Delta Freight, orders@deltafreight.com ,software,9,$371.03
+ORD-0132,12 Apr 2026,ACME CORP,orders@acmecorp.com,Software,7,1687.18
+ORD-0220,13 Jan 2026,  Acme Corp, orders@acmecorp.com ,SOFTWARE,18,26.43
+ORD-0087,"January 17, 2026",  Blue Ridge Bakery,orders@blueridgebakery.com,Services,5,USD 396.11
+ORD-0282,"March 10, 2026",Fox and Finch,ORDERS@foxandfinch.com,Software ,19,$642.55
+ORD-0137,12.05.2026,Fox and Finch,ORDERS@foxandfinch.com,services,20,USD 118.67
+ORD-0024,2026-02-18,Granite Tools, orders@granitetools.com ,SOFTWARE,14,$ 1082.67
+ORD-0209,27 Feb 2026,Fox and Finch  ,ORDERS@foxandfinch.com,ELECTRONICS,7,"USD 1,669.76"
+ORD-0141,16.06.2026,Kestrel  Media,orders@kestrelmedia.com,Software ,8,"USD 1,089.78"
+ORD-0227,25 May 2026,  Lumen Print,orders@lumenprint.com,FURNITURE,4,"USD 1,096.93"
+ORD-0299,"January 02, 2026",evergreen foods, orders@evergreenfoods.com ,SOFTWARE,15,$ 882.49
+ORD-0258,2026-03-31,KESTREL MEDIA, orders@kestrelmedia.com ,software,8,2193.43
+ORD-0025,2026-01-14,Lumen Print,ORDERS@lumenprint.com,Furniture,8,$507.24
+ORD-0236,"March 07, 2026",KESTREL MEDIA,orders@kestrelmedia.com,SERVICES,18,"USD 1,829.97"
+ORD-0277,2026-05-19,Cobalt Studio  ,orders@cobaltstudio.com,Electronics,1,"$1,086.06"
+ORD-0123,17/04/2026,FOX AND FINCH,orders@foxandfinch.com,SERVICES,17,"USD 1,320.42"
+ORD-0149,"June 18, 2026",Juniper Labs,orders@juniperlabs.com,Electronics,17,$ 568.95
+ORD-0194,"February 17, 2026",Fox  and  Finch,ORDERS@foxandfinch.com,FURNITURE,3,$ 1911.00
+ORD-0026,25/04/2026,  Iris Optics,orders@irisoptics.com,Furniture ,8,2297.41
+ORD-0046,26 Mar 2026,Granite Tools,ORDERS@granitetools.com,Furniture ,18,873.08
+ORD-0021,05/03/2026,Blue Ridge Bakery,ORDERS@blueridgebakery.com,electronics,19,582.28
+ORD-0010,09 Jan 2026,  Delta Freight,ORDERS@deltafreight.com,electronics,19,"USD 2,302.34"
+ORD-0240,2026-03-15,Fox and Finch, orders@foxandfinch.com ,services,18,1941.42
+ORD-0197,01.04.2026,  Acme Corp,ORDERS@acmecorp.com,Electronics,13,$957.39
+ORD-0214,2026-04-27,Evergreen  Foods,orders@evergreenfoods.com,Office ,14,$ 1274.43
+ORD-0194,"February 17, 2026",Fox  and  Finch,ORDERS@foxandfinch.com,FURNITURE,3,$ 1911.00
+ORD-0067,29/04/2026,Cobalt Studio,ORDERS@cobaltstudio.com,SOFTWARE,7,"USD 1,196.96"
+ORD-0180,2026-04-17,  Acme Corp, orders@acmecorp.com ,furniture,13,USD 218.92
+ORD-0004,"February 10, 2026",acme corp,ORDERS@acmecorp.com,office,11,272.93
+ORD-0217,2026-01-25,cobalt studio,ORDERS@cobaltstudio.com,Services ,8,"$2,273.35"
+ORD-0284,2026-05-02,Iris  Optics,orders@irisoptics.com,Office,16,$ 2220.98
+ORD-0049,2026-04-22,Acme Corp  , orders@acmecorp.com ,OFFICE,14,USD 188.43
+ORD-0009,04/03/2026,  Iris Optics,ORDERS@irisoptics.com,furniture,11,2214.48
+ORD-0007,19/06/2026,acme corp,orders@acmecorp.com,Office,13,$ 733.69
+ORD-0260,28 Apr 2026,DELTA FREIGHT,ORDERS@deltafreight.com,Office,99,$ 2126.99
+ORD-0274,2026-02-07,lumen print, orders@lumenprint.com ,Services ,10,$404.53
+ORD-0186,07 Jun 2026,ACME CORP, orders@acmecorp.com ,software,3,"USD 1,377.28"
+ORD-0033,30.05.2026,Kestrel Media  ,ORDERS@kestrelmedia.com,furniture,11,USD 630.70
+ORD-0080,"May 02, 2026",  Lumen Print,orders@lumenprint.com,ELECTRONICS,8,"$1,065.11"
+ORD-0061,2026-05-19,FOX AND FINCH,orders@foxandfinch.com,Office ,5,"$1,856.83"
+ORD-0183,08.02.2026,Delta  Freight, orders@deltafreight.com ,Services ,4,"USD 2,039.68"
+ORD-0113,18/01/2026,Juniper  Labs, orders@juniperlabs.com ,furniture,3,1142.63
+ORD-0038,29/03/2026,Lumen  Print, orders@lumenprint.com ,Furniture ,9,2378.28
+ORD-0042,11 Jan 2026,FOX AND FINCH, orders@foxandfinch.com ,Office,12,$ 2050.02
+ORD-0281,2026-01-28,Cobalt Studio  ,orders@cobaltstudio.com,office,20,"USD 1,385.07"
+ORD-0134,26/03/2026,Delta Freight  ,orders@deltafreight.com,furniture,5,"USD 1,421.14"
+ORD-0264,14/05/2026,  Kestrel Media,ORDERS@kestrelmedia.com,Furniture,18,"$2,491.48"
+ORD-0124,"March 07, 2026",cobalt studio, orders@cobaltstudio.com ,Furniture,15,-12.00
+ORD-0161,14.02.2026,DELTA FREIGHT, orders@deltafreight.com ,electronics,16,$ 1221.22
+ORD-0237,28.01.2026,Cobalt  Studio, orders@cobaltstudio.com ,office,2,"$1,760.92"
+ORD-0139,21 Jan 2026,Blue Ridge Bakery  ,orders@blueridgebakery.com,electronics,9,"USD 1,641.61"
+ORD-0082,"June 29, 2026",fox and finch,ORDERS@foxandfinch.com,furniture,4,"$1,895.80"
+ORD-0083,31.01.2026,Fox  and  Finch,orders@foxandfinch.com,office,16,USD 729.82
+ORD-0018,20/03/2026,Fox and Finch,orders@foxandfinch.com,Services,3,$ 1923.65
+ORD-0122,2026-06-15,kestrel media,ORDERS@kestrelmedia.com,ELECTRONICS,5,USD 241.27
+ORD-0184,2026-03-19,Delta Freight,orders@deltafreight.com,Software ,3,$ 295.60
+ORD-0171,21.06.2026,Cobalt Studio, orders@cobaltstudio.com ,SOFTWARE,1,USD 955.52
+ORD-0253,24/06/2026,Blue  Ridge  Bakery, orders@blueridgebakery.com ,Software,17,1172.80
+ORD-0076,"May 18, 2026",  Juniper Labs,ORDERS@juniperlabs.com,SERVICES,11,"$2,237.71"
+ORD-0207,2026-03-23,  Cobalt Studio,ORDERS@cobaltstudio.com,SERVICES,5,"$2,306.51"
+ORD-0269,"March 10, 2026",Acme  Corp, orders@acmecorp.com ,Services,3,$498.25
+ORD-0016,01 Jan 2026,Harbor Lights  ,orders@harborlights.com,Services,10,"$2,211.38"
+ORD-0147,"February 27, 2026",Juniper Labs  , orders@juniperlabs.com ,Services,20,"USD 2,440.53"
+ORD-0012,24.05.2026,lumen print, orders@lumenprint.com ,Services ,19,"USD 1,052.00"
+ORD-0155,21/04/2026,HARBOR LIGHTS,ORDERS@harborlights.com,services,17,"USD 1,469.66"
+ORD-0034,03 Feb 2026,  Granite Tools,ORDERS@granitetools.com,Electronics,15,1633.33
+ORD-0058,"February 04, 2026",Harbor  Lights, orders@harborlights.com ,SERVICES,15,$ 1611.03
+ORD-0156,2026-04-12,  Blue Ridge Bakery,no email,Software,11,$ 1514.31
+ORD-0039,"June 12, 2026",blue ridge bakery,orders@blueridgebakery.com,ELECTRONICS,5,"USD 1,675.15"
+ORD-0032,"March 02, 2026",Kestrel Media, orders@kestrelmedia.com ,Office,20,$ 219.91
+ORD-0202,25/04/2026,Lumen Print  ,ORDERS@lumenprint.com,software,4,360.80
+ORD-0146,"June 18, 2026",COBALT STUDIO,orders@cobaltstudio.com,FURNITURE,4,"USD 2,004.12"
+ORD-0216,2026-05-24,iris optics,orders@irisoptics.com,Software,9,"$1,183.58"
+ORD-0251,24.06.2026,Delta Freight, orders@deltafreight.com ,SOFTWARE,3,2409.50
+ORD-0268,04 Mar 2026,GRANITE TOOLS,ORDERS@granitetools.com,Electronics ,12,$247.38
+ORD-0129,27 Apr 2026,Granite  Tools, orders@granitetools.com ,Services ,19,"$1,950.81"
+ORD-0093,30.01.2026,GRANITE TOOLS, orders@granitetools.com ,OFFICE,5,192.19
+ORD-0098,2026-05-06,  Kestrel Media,ORDERS@kestrelmedia.com,SOFTWARE,11,1761.71
+ORD-0255,"January 06, 2026",lumen print,orders@lumenprint.com,Office,2,"USD 1,115.69"
+ORD-0097,10.03.2026,Kestrel Media,orders@kestrelmedia.com,Software ,9,$ 480.76
+ORD-0135,2026-01-29,COBALT STUDIO,orders@cobaltstudio.com,furniture,19,853.74
+ORD-0288,10.04.2026,juniper labs,ORDERS@juniperlabs.com,Office,17,"USD 1,959.16"
+ORD-0267,18/03/2026,  Delta Freight,orders@deltafreight.com,Services ,14,"$1,465.89"
+ORD-0070,09/02/2026,JUNIPER LABS,ORDERS@juniperlabs.com,electronics,15,"USD 1,838.60"
+ORD-0121,28.02.2026,evergreen foods,orders@evergreenfoods.com,OFFICE,5,1651.91
+ORD-0242,18.03.2026,Acme Corp  ,orders@acmecorp.com,FURNITURE,15,$ 1686.16
+ORD-0112,21 Jan 2026,Kestrel  Media, orders@kestrelmedia.com ,SOFTWARE,16,2291.89
+ORD-0188,"June 12, 2026",acme corp,ORDERS@acmecorp.com,ELECTRONICS,3,$908.87
+ORD-0015,30.01.2026,kestrel media, orders@kestrelmedia.com ,Furniture,10,"$1,144.71"
+ORD-0066,2026-05-17,  Juniper Labs, orders@juniperlabs.com ,Services,3,$ 1689.92
+ORD-0071,12.02.2026,Fox and Finch  , orders@foxandfinch.com ,electronics,10,288.37
+ORD-0064,18.05.2026,Granite Tools  ,orders@granitetools.com,software,9,$ 1147.51
+ORD-0117,29 Apr 2026,  Delta Freight,ORDERS@deltafreight.com,Electronics ,10,"$1,781.31"
+ORD-0140,02.06.2026,granite tools,ORDERS@granitetools.com,Services ,4,2084.05
+ORD-0168,15 Apr 2026,Granite  Tools, orders@granitetools.com ,ELECTRONICS,3,869.26
+ORD-0272,30.04.2026,Granite  Tools,ORDERS@granitetools.com,FURNITURE,12,$ 1349.31
+ORD-0256,17.01.2026,Lumen Print,orders@lumenprint.com,Software,10,"$1,076.82"
+ORD-0165,29.05.2026,Harbor  Lights,orders@harborlights.com,software,11,$ 1590.98
+ORD-0252,n/a,ACME CORP, orders@acmecorp.com ,services,6,$ 865.14
+ORD-0167,"March 05, 2026",  Acme Corp, orders@acmecorp.com ,services,12,USD 982.40
+ORD-0069,2026-02-27,Fox  and  Finch,orders@foxandfinch.com,electronics,7,2204.98
+ORD-0029,"March 09, 2026",granite tools,ORDERS@granitetools.com,Services ,5,USD 502.80
+ORD-0150,,GRANITE TOOLS,ORDERS@granitetools.com,FURNITURE,1.5,1567.96
+ORD-0005,25 Jan 2026,granite tools, orders@granitetools.com ,Furniture,15,1410.68
+ORD-0075,21 Apr 2026,Blue  Ridge  Bakery,ORDERS@blueridgebakery.com,Office ,6,"USD 1,928.60"
+ORD-0057,26/02/2026,Granite  Tools, orders@granitetools.com ,Software,18,658.25
+ORD-0226,06 Jun 2026,FOX AND FINCH,ORDERS@foxandfinch.com,SERVICES,19,$ 886.78
+ORD-0280,05.01.2026,Acme  Corp,ORDERS@acmecorp.com,SERVICES,1,$ 1321.52
+ORD-0163,11 Jun 2026,harbor lights, orders@harborlights.com ,ELECTRONICS,17,USD 199.48
+ORD-0195,21.04.2026,BLUE RIDGE BAKERY, orders@blueridgebakery.com ,FURNITURE,4,USD 214.89
+ORD-0287,23.02.2026,ACME CORP, orders@acmecorp.com ,Software,10,$430.85
+ORD-0107,"May 29, 2026",JUNIPER LABS,ORDERS@juniperlabs.com,Services ,12,$ 876.47
+ORD-0178,2026-05-22,Fox  and  Finch, orders@foxandfinch.com ,ELECTRONICS,3,"$2,005.46"
+ORD-0105,"March 04, 2026",Harbor Lights  ,orders@harborlights.com,software,20,"$1,337.32"
+ORD-0127,24 May 2026,Juniper Labs  ,orders@juniperlabs.com,Electronics ,10,$ 1706.94
+ORD-0130,2026-06-17,  Granite Tools, orders@granitetools.com ,SOFTWARE,2,"USD 1,814.52"
+ORD-0270,23 Feb 2026,harbor lights,orders@harborlights.com,office,4,$ 1962.89
+ORD-0263,28 May 2026,Delta Freight  , orders@deltafreight.com ,furniture,10,"$2,302.05"
+ORD-0175,"March 02, 2026",Kestrel Media  ,ORDERS@kestrelmedia.com,software,18,USD 631.96
+ORD-0246,"February 05, 2026",cobalt studio,orders@cobaltstudio.com,ELECTRONICS,13,$ 622.40
+ORD-0003,2026-06-04,Iris Optics  ,orders@irisoptics.com,Services ,8,"USD 1,182.57"
+ORD-0092,30 Jun 2026,Evergreen  Foods,ORDERS@evergreenfoods.com,electronics,9,"$2,070.24"
+ORD-0014,19.04.2026,Kestrel Media,ORDERS@kestrelmedia.com,Software ,17,664.06
+ORD-0222,24/05/2026,juniper labs, orders@juniperlabs.com ,Furniture,13,$ 1326.87
+ORD-0250,05 Jun 2026,  Harbor Lights, orders@harborlights.com ,Services ,18,"$2,107.38"
+ORD-0265,"June 23, 2026",Kestrel Media  ,ORDERS@kestrelmedia.com,ELECTRONICS,13,"USD 2,064.93"
+ORD-0233,05 Mar 2026,Delta Freight  ,ORDERS@deltafreight.com,OFFICE,10,"$1,852.85"
+ORD-0074,2026-04-05,Kestrel Media  , orders@kestrelmedia.com ,Furniture,14,$ 2160.69
+ORD-0196,17 Mar 2026,  Kestrel Media, orders@kestrelmedia.com ,software,15,$ 926.55
+ORD-0299,"January 02, 2026",evergreen foods, orders@evergreenfoods.com ,SOFTWARE,15,$ 882.49
+ORD-0143,"February 09, 2026",Fox and Finch,orders@foxandfinch.com,Electronics,14,USD 258.13
+ORD-0079,03.01.2026,IRIS OPTICS,orders@irisoptics.com,Office ,16,"$1,460.36"
+ORD-0206,2026-01-23,juniper labs,ORDERS@juniperlabs.com,Software ,14,2163.33
+ORD-0125,"June 23, 2026",Delta Freight  ,ORDERS@deltafreight.com,Electronics ,1,698.26
+ORD-0210,10 Jun 2026,Cobalt Studio  , orders@cobaltstudio.com ,electronics,19,"$2,473.36"
+ORD-0109,"March 23, 2026",Acme  Corp,ORDERS@acmecorp.com,software,16,$102.04
+ORD-0099,"March 26, 2026",Cobalt  Studio,ORDERS@cobaltstudio.com,Furniture ,18,$ 101.19
+ORD-0211,18.06.2026,Cobalt  Studio, orders@cobaltstudio.com ,Furniture,1,217.92
+ORD-0036,14/03/2026,  Fox and Finch, orders@foxandfinch.com ,Furniture,two,789.80
+ORD-0285,26.03.2026,Kestrel Media, orders@kestrelmedia.com ,electronics,7,$ 2367.63
+ORD-0108,24/03/2026,Harbor  Lights,orders@harborlights.com,Services ,8,$ 2248.98
+ORD-0191,17/03/2026,Acme Corp,orders@acmecorp.com,ELECTRONICS,10,$ 1356.04
+ORD-0131,"April 24, 2026",DELTA FREIGHT,ORDERS@deltafreight.com,ELECTRONICS,18,"USD 2,368.74"
+ORD-0037,2026-03-09,Cobalt Studio, orders@cobaltstudio.com ,services,9,$743.60
+ORD-0096,24.03.2026,granite tools,orders@granitetools.com,electronics,19,1544.10
+ORD-0047,08/03/2026,Blue Ridge Bakery  ,ORDERS@blueridgebakery.com,Electronics,20,"USD 1,144.18"
+ORD-0187,15.05.2026,Blue Ridge Bakery  , orders@blueridgebakery.com ,Services,13,TBD
+ORD-0079,03.01.2026,IRIS OPTICS,orders@irisoptics.com,Office ,16,"$1,460.36"
+ORD-0062,"April 17, 2026",blue ridge bakery, orders@blueridgebakery.com ,Software ,2,$ 547.20
+ORD-0031,16/05/2026,Iris Optics, orders@irisoptics.com ,electronics,3,1564.84
+ORD-0246,"February 05, 2026",cobalt studio,orders@cobaltstudio.com,ELECTRONICS,13,$ 622.40
+ORD-0259,"March 18, 2026",Acme  Corp, orders@acmecorp.com ,Services ,18,$999.25
+ORD-0212,28 May 2026,Kestrel  Media,orders@kestrelmedia.com,Services ,20,1680.07
+ORD-0022,2026-06-11,BLUE RIDGE BAKERY,orders@blueridgebakery.com,ELECTRONICS,3,"$1,352.82"
+ORD-0296,24/05/2026,Lumen Print  , orders@lumenprint.com ,Office ,6,USD 368.96
+ORD-0224,23 May 2026,FOX AND FINCH,orders@foxandfinch.com,Services ,17,110.52
+ORD-0077,"March 13, 2026",BLUE RIDGE BAKERY,ORDERS@blueridgebakery.com,Services ,11,$ 80.23
+ORD-0173,10.05.2026,Blue  Ridge  Bakery, orders@blueridgebakery.com ,ELECTRONICS,20,$ 348.53
+ORD-0243,"May 10, 2026",cobalt studio,orders@cobaltstudio.com,ELECTRONICS,6,$ 1921.58
+ORD-0159,21 Mar 2026,GRANITE TOOLS,ORDERS@granitetools.com,Office,17,1664.96
+ORD-0200,27/05/2026,Blue Ridge Bakery  ,ORDERS@blueridgebakery.com,SOFTWARE,9,659.34
+ORD-0091,"January 01, 2026",  Cobalt Studio, orders@cobaltstudio.com ,Services ,10,$90.56
+ORD-0090,10/06/2026,delta freight, orders@deltafreight.com ,electronics,8,460.64
+ORD-0199,09.04.2026,Fox and Finch, orders@foxandfinch.com ,Office ,12,$ 980.21
+ORD-0151,09/02/2026,Acme Corp  ,orders@acmecorp.com,ELECTRONICS,15,$ 1740.23
+ORD-0101,18.02.2026,acme corp, orders@acmecorp.com ,Software ,2,USD 538.61
+ORD-0157,"April 14, 2026",juniper labs,orders@juniperlabs.com,Software,11,$ 455.55
+ORD-0219,2026-01-06,  Harbor Lights, orders@harborlights.com ,software,7,"USD 1,534.20"
+ORD-0153,23.06.2026,  Evergreen Foods, orders@evergreenfoods.com ,Furniture,8,1041.15
+ORD-0081,19.06.2026,evergreen foods,ORDERS@evergreenfoods.com,SERVICES,14,"USD 1,960.42"
+ORD-0230,"January 05, 2026",delta freight,ORDERS@deltafreight.com,Office ,7,$ 1080.77
+ORD-0136,2026-03-09,COBALT STUDIO, orders@cobaltstudio.com ,Software,3,$ 1253.45
+ORD-0126,05 Apr 2026,Harbor Lights  ,ORDERS@harborlights.com,Furniture,8,1240.94
+ORD-0172,24 Feb 2026,  Cobalt Studio,orders@cobaltstudio.com,office,5,USD 207.28
+ORD-0068,08 Apr 2026,  Fox and Finch,ORDERS@foxandfinch.com,Electronics ,1,1968.52
+ORD-0030,15.01.2026,Delta  Freight, orders@deltafreight.com ,ELECTRONICS,2,$ 136.44
+ORD-0118,24 Apr 2026,Blue Ridge Bakery  ,ORDERS@blueridgebakery.com,SOFTWARE,15,"USD 2,220.91"
+ORD-0223,13.03.2026,Iris  Optics, orders@irisoptics.com ,electronics,4,"USD 1,037.59"
+ORD-0084,19 Feb 2026,BLUE RIDGE BAKERY,ORDERS@blueridgebakery.com,OFFICE,1,"$1,861.02"
+ORD-0094,20.03.2026,Cobalt  Studio, orders@cobaltstudio.com ,Furniture ,4,"USD 1,233.66"
+ORD-0231,16/01/2026,Lumen Print  ,orders@lumenprint.com,SERVICES,16,$ 1382.50
+ORD-0138,2026-06-14,Harbor Lights,ORDERS@harborlights.com,Software ,4,$ 1290.21
+ORD-0235,30/03/2026,granite tools,orders@granitetools.com,Furniture,12,$ 2427.23
+ORD-0027,2026-05-21,Harbor Lights, orders@harborlights.com ,Services,3,"$2,433.41"
+ORD-0148,16 Feb 2026,Acme  Corp,ORDERS@acmecorp.com,FURNITURE,1,$480.54
+ORD-0017,06/04/2026,Cobalt Studio  , orders@cobaltstudio.com ,ELECTRONICS,16,56.05
+ORD-0204,2026-13-40,evergreen foods, orders@evergreenfoods.com ,Office,7,"$2,081.35"
+ORD-0208,21.04.2026,Cobalt Studio,orders@cobaltstudio.com,services,10,$436.63
+ORD-0217,2026-01-25,cobalt studio,ORDERS@cobaltstudio.com,Services ,8,"$2,273.35"
+ORD-0193,26 Mar 2026,Kestrel Media,ORDERS@kestrelmedia.com,Software ,15,$ 2350.23
+ORD-0072,"May 28, 2026",  Evergreen Foods,no email,Office,19,"$1,815.40"
+ORD-0053,"April 24, 2026",Harbor  Lights,orders@harborlights.com,Services ,6,1732.13
+ORD-0295,,  Juniper Labs,orders@juniperlabs.com,Furniture ,13,2047.54
+ORD-0181,08 Jan 2026,Delta Freight, orders@deltafreight.com ,furniture,5,USD 105.40
+ORD-0002,2026-05-20,Kestrel Media  ,ORDERS@kestrelmedia.com,Electronics,3,$578.14
+ORD-0100,22 Mar 2026,blue ridge bakery,orders@blueridgebakery.com,Software,18,$ 1216.04
+ORD-0283,2026-06-25,Evergreen  Foods, orders@evergreenfoods.com ,Electronics,13,$ 999.21
+ORD-0276,"June 14, 2026",  Lumen Print,orders@lumenprint.com,furniture,5,$ 1893.25
+ORD-0116,2026-02-14,Cobalt Studio  ,ORDERS@cobaltstudio.com,services,16,"$2,397.92"
+ORD-0293,24 Apr 2026,evergreen foods,orders@evergreenfoods.com,Office,6,$ 1134.78
+ORD-0158,2026-04-03,  Lumen Print,orders@lumenprint.com,Office ,19,1054.75
+ORD-0189,2026-06-18,Lumen Print  , orders@lumenprint.com ,furniture,2,USD 928.53
+ORD-0008,04/04/2026,kestrel media,ORDERS@kestrelmedia.com,OFFICE,3,"$1,601.80"
+ORD-0102,03 Feb 2026,  Iris Optics, orders@irisoptics.com ,Software,1,"$1,656.56"
+ORD-0111,17/06/2026,Granite Tools,ORDERS@granitetools.com,FURNITURE,20,$ 1820.88
+ORD-0169,"June 23, 2026",iris optics,ORDERS@irisoptics.com,services,11,$218.65
+ORD-0260,28 Apr 2026,DELTA FREIGHT,ORDERS@deltafreight.com,Office,2,$ 2126.99
+ORD-0261,05/01/2026,JUNIPER LABS,orders@juniperlabs.com,Electronics,15,1572.05
+ORD-0048,"March 22, 2026",Lumen Print  , orders@lumenprint.com ,Electronics ,19,USD 503.28
+ORD-0162,25.05.2026,kestrel media, orders@kestrelmedia.com ,furniture,15,$ 184.00
+ORD-0104,31/01/2026,  Harbor Lights, orders@harborlights.com ,FURNITURE,14,$ 2193.17
+ORD-0249,31 Jan 2026,lumen print, orders@lumenprint.com ,office,5,"$1,258.52"
+ORD-0273,"January 26, 2026",harbor lights,orders@harborlights.com,FURNITURE,14,$124.84
+ORD-0119,"April 09, 2026",Delta Freight,orders@deltafreight.com,SOFTWARE,19,USD 780.61
+ORD-0110,01 Jun 2026,Iris Optics,ORDERS@irisoptics.com,Electronics ,1,"$1,898.84"
+ORD-0144,2026-05-23,Cobalt Studio  , orders@cobaltstudio.com ,SERVICES,4,"USD 1,081.91"
+ORD-0085,2026-01-12,Evergreen Foods  ,ORDERS@evergreenfoods.com,Office ,4,2292.78
+ORD-0041,10 Jan 2026,Iris Optics  , orders@irisoptics.com ,Office ,5,USD 114.65
+ORD-0142,"April 13, 2026",Harbor  Lights,orders@harborlights.com,Furniture ,11,"USD 1,748.54"
+ORD-0045,"February 21, 2026",delta freight,ORDERS@deltafreight.com,office,1,"$1,735.23"
+ORD-0292,12/06/2026,Lumen  Print,ORDERS@lumenprint.com,FURNITURE,4,244.91
+ORD-0063,2026-05-30,Granite Tools  ,ORDERS@granitetools.com,Software,12,$ 787.79
+ORD-0190,"February 14, 2026",Kestrel  Media,ORDERS@kestrelmedia.com,office,3,$ 1882.06
+ORD-0239,21/05/2026,  Acme Corp, orders@acmecorp.com ,Software ,7,"USD 1,986.57"
+ORD-0043,09/02/2026,JUNIPER LABS,orders@juniperlabs.com,Software,6,"USD 1,935.85"
+ORD-0298,20 Jan 2026,harbor lights,orders@harborlights.com,software,15,$285.42
+ORD-0174,11/02/2026,Cobalt  Studio, orders@cobaltstudio.com ,Office ,2,"USD 1,082.04"
+ORD-0028,"April 15, 2026",  Cobalt Studio,orders@cobaltstudio.com,Software,6,998.45
+ORD-0166,2026-02-08,  Iris Optics,orders@irisoptics.com,Furniture,17,"$1,698.78"
+ORD-0088,2026-03-05,Blue Ridge Bakery  ,ORDERS@blueridgebakery.com,services,17,$ 1002.13
+ORD-0218,28 May 2026,FOX AND FINCH,orders@foxandfinch.com,Software ,16,"USD 2,309.44"
+ORD-0294,23.05.2026,  Iris Optics,orders@irisoptics.com,Electronics,12,1457.85
+ORD-0059,25/04/2026,Iris  Optics,ORDERS@irisoptics.com,SOFTWARE,8,
+ORD-0300,02/06/2026,kestrel media,ORDERS@kestrelmedia.com,services,16,$828.61
+ORD-0154,22 Feb 2026,ACME CORP,orders@acmecorp.com,FURNITURE,11,319.53
+ORD-0035,18/05/2026,Blue Ridge Bakery  ,ORDERS@blueridgebakery.com,OFFICE,3,"$2,309.95"
+ORD-0164,n/a,Harbor Lights,ORDERS@harborlights.com,Furniture,3,$ 1617.20
+ORD-0232,"February 14, 2026",Fox and Finch  ,ORDERS@foxandfinch.com,SERVICES,9,$ 1604.27
+ORD-0225,05 Feb 2026,  Acme Corp, orders@acmecorp.com ,software,two,"$2,346.29"
+ORD-0050,2026-03-22,Juniper  Labs,ORDERS@juniperlabs.com,SERVICES,14,$ 860.06
+ORD-0244,07/03/2026,Kestrel Media, orders@kestrelmedia.com ,FURNITURE,19,"$1,772.90"
+ORD-0271,28.06.2026,Delta  Freight,orders@deltafreight.com,software,18,USD 848.09
+ORD-0278,2026-03-01,Kestrel  Media,orders@kestrelmedia.com,electronics,17,"USD 1,200.40"
+ORD-0106,"March 12, 2026",blue ridge bakery, orders@blueridgebakery.com ,Furniture,10,"USD 1,908.29"
+ORD-0234,"June 30, 2026",lumen print,ORDERS@lumenprint.com,FURNITURE,10,$ 324.48
+ORD-0176,19 Feb 2026,Harbor  Lights, orders@harborlights.com ,Software ,10,$ 2044.80
+ORD-0160,11/05/2026,iris optics,ORDERS@irisoptics.com,office,4,USD 388.89
+ORD-0179,26.04.2026,EVERGREEN FOODS,ORDERS@evergreenfoods.com,electronics,15,"USD 2,324.00"
+ORD-0073,28 Jun 2026,Blue  Ridge  Bakery, orders@blueridgebakery.com ,Electronics,12,$ 1401.55
+ORD-0060,05/05/2026,iris optics,ORDERS@irisoptics.com,ELECTRONICS,8,USD 717.28
+ORD-0230,"January 05, 2026",delta freight,ORDERS@deltafreight.com,Office ,7,$ 1080.77
+ORD-0213,10.06.2026,harbor lights, orders@harborlights.com ,Furniture ,8,$ 2114.44
+ORD-0152,"June 05, 2026",  Harbor Lights,ORDERS@harborlights.com,Office,12,1131.99
+ORD-0054,12.05.2026,evergreen foods,orders@evergreenfoods.com,OFFICE,8,"$2,119.35"
+ORD-0248,2026-03-02,Lumen  Print,orders@lumenprint.com,SOFTWARE,6,"USD 1,067.77"
+ORD-0013,05.02.2026,  Delta Freight,orders@deltafreight.com,Electronics,5,"$1,649.81"
+ORD-0177,"May 16, 2026",IRIS OPTICS,orders@irisoptics.com,services,9,$ 141.78
+ORD-0078,"February 16, 2026",FOX AND FINCH,ORDERS@foxandfinch.com,FURNITURE,9,"USD 2,312.70"
+ORD-0257,"June 14, 2026",cobalt studio,ORDERS@cobaltstudio.com,Software ,13,$215.37
+ORD-0238,2026-03-01,Kestrel Media,ORDERS@kestrelmedia.com,Furniture ,4,"$1,790.70"
+ORD-0201,"February 17, 2026",Acme Corp  ,ORDERS@acmecorp.com,Services,9,"USD 2,036.52"
+ORD-0192,02 May 2026,Iris Optics, orders@irisoptics.com ,OFFICE,12,2265.04
+ORD-0229,15.05.2026,  Cobalt Studio,orders@cobaltstudio.com,Office,19,2490.66
+ORD-0291,08 Jun 2026,BLUE RIDGE BAKERY, orders@blueridgebakery.com ,Electronics,9,$ 409.28
+ORD-0286,2026-01-12,Evergreen  Foods,ORDERS@evergreenfoods.com,Services,6,"USD 2,439.70"
+ORD-0266,"April 17, 2026",LUMEN PRINT,ORDERS@lumenprint.com,software,18,"$1,246.30"
+ORD-0262,"January 12, 2026",  Delta Freight,orders@deltafreight.com,services,2,USD 372.35
+ORD-0114,2026-06-30,  Kestrel Media,orders@kestrelmedia.com,Furniture,2,855.32
+ORD-0133,27/03/2026,ACME CORP, orders@acmecorp.com ,Office,18,$548.05
+ORD-0051,17.03.2026,LUMEN PRINT,orders@lumenprint.com,Software ,6,"USD 1,618.53"
+ORD-0006,21.01.2026,granite tools, orders@granitetools.com ,SERVICES,19,509.07
+ORD-0055,2026-01-07,COBALT STUDIO,ORDERS@cobaltstudio.com,Services,15,"$1,091.43"
+ORD-0221,04 Feb 2026,Granite  Tools,ORDERS@granitetools.com,SOFTWARE,2,1055.10
+ORD-0170,"March 21, 2026",FOX AND FINCH, orders@foxandfinch.com ,ELECTRONICS,18,USD 992.44
+ORD-0205,2026-05-07,delta freight, orders@deltafreight.com ,SERVICES,15,"$2,111.75"
+ORD-0289,"January 26, 2026",ACME CORP,orders@acmecorp.com,Furniture ,11,call
+ORD-0023,"June 21, 2026",EVERGREEN FOODS, orders@evergreenfoods.com ,Office ,8,$ 2061.83
+ORD-0086,"March 14, 2026",  Juniper Labs,ORDERS@juniperlabs.com,furniture,2,$ 666.85
+ORD-0182,28/06/2026,Harbor  Lights,ORDERS@harborlights.com,Software,3,USD 54.81
+ORD-0128,2026-02-05,Blue Ridge Bakery,ORDERS@blueridgebakery.com,Software,4,$620.51
+ORD-0056,"June 28, 2026",  Lumen Print,ORDERS@lumenprint.com,office,1,2345.05
+ORD-0044,21/06/2026,granite tools,orders@granitetools.com,Electronics ,2,$ 2255.75
+ORD-0038,29/03/2026,Lumen  Print, orders@lumenprint.com ,Furniture ,9,2378.28
+ORD-0275,"February 28, 2026",Fox and Finch  ,orders@foxandfinch.com,SOFTWARE,9,$ 2006.10
+ORD-0185,2026-05-18,Juniper  Labs, orders@juniperlabs.com ,services,5,$ 768.55
+ORD-0019,17/05/2026,BLUE RIDGE BAKERY, orders@blueridgebakery.com ,software,9,$ 1388.26
+ORD-0279,08.06.2026,  Acme Corp, orders@acmecorp.com ,Software,1,$ 1400.16
+ORD-0215,29.03.2026,DELTA FREIGHT,ORDERS@deltafreight.com,FURNITURE,13,USD 347.79

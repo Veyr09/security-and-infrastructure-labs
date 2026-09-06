@@ -1,0 +1,51 @@
+
+FAIL: $1,460.20 exceeds the $200.00 threshold
+Terraform plan cost review
+========================================================================
+Resources in plan : 15
+Findings          : 5
+Rates             : eu-central-1 on-demand list prices. SNAPSHOT - verify against the AWS pricing pages before quoting a client. Rates are an input to this tool, not a claim made by it.
+Rates checked     : 2026-09-06
+
+[rds-cost-drivers]  $1,322.52/month
+    aws_db_instance.main
+    db.m5.2xlarge at $0.81/hour, doubled by multi_az, plus 500 GB of gp2 storage also doubled by multi_az. Usually the largest single line in a small stack, and the instance class is usually the number nobody revisited after launch.
+    - Measure CPU and connections for a week before resizing. A class chosen on a guess is not evidence for the next guess.
+    - gp3 storage instead of gp2 where the engine supports it.
+    - Multi-AZ earns its doubling for a production database and is worth questioning for anything else.
+
+[nat-gateway-per-az]  $113.88/month  ($75.92 of it avoidable)
+    aws_nat_gateway.this["eu-central-1a"]
+    aws_nat_gateway.this["eu-central-1b"]
+    aws_nat_gateway.this["eu-central-1c"]
+    3 NAT gateways at $0.05/hour each, billed whether or not traffic flows. One per availability zone is the right answer when an AZ outage must not take egress down, and the wrong answer when it was the default and nobody priced it.
+    Usage-dependent, excluded from the total: plus $0.05/GB processed, which a plan cannot predict
+    - Keep all three only if AZ-independent egress is a stated requirement.
+    - One NAT gateway shared across AZs: cheaper, and egress dies with that AZ.
+    - VPC endpoints for S3 and DynamoDB, so that traffic skips the NAT entirely.
+
+[ebs-gp2-not-gp3]  $23.80/month  ($4.76 of it avoidable)
+    aws_ebs_volume.scratch
+    200 GB on gp2. gp3 is cheaper per GB and lets IOPS be set independently of size, which is the reason gp2 volumes get over-provisioned in the first place.
+    - Modify in place: gp2 to gp3 does not require detaching the volume.
+
+[log-group-never-expires]
+    aws_cloudwatch_log_group.app
+    aws_cloudwatch_log_group.worker
+    These log groups have no retention set, which in CloudWatch Logs means never expire. The bill is small in month one and is still being paid in year three for logs nobody will read. Cheapest line to fix, and the one most often missed.
+    Usage-dependent, excluded from the total: $0.03/GB-month against a volume that only grows
+    - Set retention_in_days on every group: 30 days for application logs, longer only where a regulation names a number.
+    - Export to S3 with a lifecycle rule if something genuinely has to be kept.
+
+[lambda-memory-reserved-not-measured]
+    aws_lambda_function.api
+    3008 MB reserved. Lambda bills memory multiplied by duration, so the reservation is paid on every invocation whether the handler uses it or not. More memory also buys more CPU, so cutting it blindly can cost more by making runs longer. This one needs measuring, not guessing.
+    Usage-dependent, excluded from the total: $0.04 per invocation that runs to the full 900s timeout
+    - Read the Max Memory Used line the platform already writes to the log on every invocation. That is the measurement, and it is free.
+    - Tune memory against measured duration rather than downward on principle.
+
+------------------------------------------------------------------------
+Fixed monthly cost identified : $1,460.20
+Of which avoidable outright   : $80.68
+Usage-dependent lines are excluded from both totals, because a plan
+describes what will exist, not how hard it will be used.

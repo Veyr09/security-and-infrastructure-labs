@@ -1,0 +1,29 @@
+building
+  ok   vulnerable copy builds
+  ok   fixed copy builds clean under -Wall -Wextra -Werror
+
+CWE-134, a value used as a format string
+  ok   vulnerable copy is rejected by -Werror=format-security
+  ok   fixed copy passes -Werror=format-security
+
+well-formed input
+  ok   both copies accept a well-formed header block
+  ok   the fix does not change the output for well-formed input
+
+CWE-787, unbounded copy into a fixed buffer
+  ok   80-character Name into a 32-byte buffer: vulnerable copy aborts with heap-buffer-overflow
+  ok   80-character Name into a 32-byte buffer: fixed copy exits 1 saying "hdrparse: Name is 80 characters, limit is 31"
+
+CWE-193, off-by-one on the terminator
+  ok   16-character Tag into a 16-byte buffer: vulnerable copy aborts with heap-buffer-overflow
+  ok   16-character Tag into a 16-byte buffer: fixed copy exits 1 saying "hdrparse: Tag is 16 characters, limit is 15"
+
+CWE-122, a length field taken on trust
+  ok   five Role lines after a Roles count of 2: vulnerable copy aborts with heap-buffer-overflow
+  ok   five Role lines after a Roles count of 2: fixed copy exits 1 saying "hdrparse: more Role lines than the Roles count of 2"
+
+CWE-416, a pointer kept past the free
+  ok   a second Note frees what first_note points at: vulnerable copy aborts with heap-use-after-free
+  ok   a second Note frees what first_note points at: fixed copy keeps both notes correctly
+
+14 passed, 0 failed

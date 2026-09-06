@@ -1,0 +1,12 @@
+stack: isolated
+
+  ok     cross_tenant_read: expected False, got False
+           tenant-a asked for entry 4 and got HTTP 404
+  ok     token_replay: expected False, got False
+           tenant-b rejected tenant-a's token with HTTP 401
+  ok     db_path_open: expected False, got False
+           app-a -> db-b:5432 : gaierror: [Errno -2] Name or service not known
+  ok     only_proxy_published: expected True, got True
+           published: {"proxy": ["127.0.0.1:8080"]}
+
+all 4 probes match what this stack claims

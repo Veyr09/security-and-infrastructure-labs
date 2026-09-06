@@ -1,0 +1,23 @@
+# The "before" state: the application port is published on every interface.
+# This is what a default `ports: - "8080:80"` gives you, and it is how most
+# self-hosted deployments end up reachable from the internet by accident.
+services:
+  app:
+    image: traefik/whoami:v1.10
+    container_name: hardening-app
+    ports:
+      - "8080:80"
+    networks: [edge]
+
+  proxy:
+    image: caddy:2.8-alpine
+    container_name: hardening-proxy
+    ports:
+      - "8081:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    networks: [edge]
+    depends_on: [app]
+
+networks:
+  edge:

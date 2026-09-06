@@ -1,0 +1,58 @@
+# Stack 1 of 3: one database, one signing key, no tenant predicate.
+#
+# This is what a multi-tenant rollout looks like when each new client is added
+# by pointing another app at the same database and copying the .env across. The
+# login screen works, and every tenant's own listing is correct.
+#
+# Credentials here are lab values printed in the repository on purpose. They are
+# not secrets and nothing outside this lab uses them.
+name: mti-shared-vulnerable
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: timesheets
+      POSTGRES_PASSWORD: lab-only-not-a-real-secret
+      POSTGRES_DB: timesheets
+    networks: [shared]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U timesheets"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  app-a:
+    build: .
+    command: ["python", "/app/vulnerable.py"]
+    environment:
+      TENANT_ID: tenant-a
+      # The same key in both apps. This is the usual cause: one .env, copied.
+      SESSION_SECRET: shared-signing-key
+      DATABASE_URL: postgresql://timesheets:lab-only-not-a-real-secret@db:5432/timesheets
+    depends_on:
+      db: {condition: service_healthy}
+    networks: [shared]
+
+  app-b:
+    build: .
+    command: ["python", "/app/vulnerable.py"]
+    environment:
+      TENANT_ID: tenant-b
+      SESSION_SECRET: shared-signing-key
+      DATABASE_URL: postgresql://timesheets:lab-only-not-a-real-secret@db:5432/timesheets
+    depends_on:
+      db: {condition: service_healthy}
+    networks: [shared]
+
+  proxy:
+    image: caddy:2-alpine
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    # The only published port in any of the three stacks.
+    ports: ["127.0.0.1:8080:80"]
+    depends_on: [app-a, app-b]
+    networks: [shared]
+
+networks:
+  shared:

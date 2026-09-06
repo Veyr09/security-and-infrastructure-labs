@@ -1,0 +1,10 @@
+ id | tenant_id |   worker    |         note         
+----+-----------+-------------+----------------------
+  1 | tenant-a  | A. Nowak    | Foundations, plot 12
+  2 | tenant-a  | A. Nowak    | Formwork, plot 12
+  3 | tenant-a  | J. Kowalski | Rebar delivery
+  4 | tenant-b  | M. Dubois   | Roofing, site 3
+  5 | tenant-b  | M. Dubois   | Safety briefing
+  6 | tenant-b  | L. Bernard  | Scaffolding strike
+(6 rows)
+

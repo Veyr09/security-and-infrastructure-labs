@@ -1,0 +1,19 @@
+Terraform plan cost review
+========================================================================
+Resources in plan : 12
+Findings          : 1
+Rates             : eu-central-1 on-demand list prices. SNAPSHOT - verify against the AWS pricing pages before quoting a client. Rates are an input to this tool, not a claim made by it.
+Rates checked     : 2026-09-06
+
+[rds-cost-drivers]  $340.22/month
+    aws_db_instance.main
+    db.m5.large at $0.20/hour, doubled by multi_az, plus 200 GB of gp3 storage also doubled by multi_az. Usually the largest single line in a small stack, and the instance class is usually the number nobody revisited after launch.
+    - Measure CPU and connections for a week before resizing. A class chosen on a guess is not evidence for the next guess.
+    - gp3 storage instead of gp2 where the engine supports it.
+    - Multi-AZ earns its doubling for a production database and is worth questioning for anything else.
+
+------------------------------------------------------------------------
+Fixed monthly cost identified : $340.22
+Of which avoidable outright   : $0.00
+Usage-dependent lines are excluded from both totals, because a plan
+describes what will exist, not how hard it will be used.

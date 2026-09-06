@@ -1,0 +1,72 @@
+# Stack 3 of 3: a database per tenant, a network per tenant, a key per tenant.
+#
+# The application is the same fixed.py as stack 2, so the code is not what
+# changes here - the deployment is. tenant-a's app has no route to tenant-b's
+# database at all, so a query that forgot its tenant predicate would still have
+# nothing of tenant-b's to return.
+#
+# The proxy sits on both tenant networks because it has to reach both apps.
+# The apps do not share a network with each other, so that is the only path
+# between them, and it goes through something that routes by hostname.
+name: mti-isolated
+
+services:
+  db-a:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: timesheets
+      POSTGRES_PASSWORD: lab-only-not-a-real-secret
+      POSTGRES_DB: timesheets
+    networks: [tenant-a]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U timesheets"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  db-b:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: timesheets
+      POSTGRES_PASSWORD: lab-only-not-a-real-secret
+      POSTGRES_DB: timesheets
+    networks: [tenant-b]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U timesheets"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  app-a:
+    build: .
+    command: ["python", "/app/fixed.py"]
+    environment:
+      TENANT_ID: tenant-a
+      SESSION_SECRET: key-for-tenant-a
+      DATABASE_URL: postgresql://timesheets:lab-only-not-a-real-secret@db-a:5432/timesheets
+    depends_on:
+      db-a: {condition: service_healthy}
+    networks: [tenant-a]
+
+  app-b:
+    build: .
+    command: ["python", "/app/fixed.py"]
+    environment:
+      TENANT_ID: tenant-b
+      SESSION_SECRET: key-for-tenant-b
+      DATABASE_URL: postgresql://timesheets:lab-only-not-a-real-secret@db-b:5432/timesheets
+    depends_on:
+      db-b: {condition: service_healthy}
+    networks: [tenant-b]
+
+  proxy:
+    image: caddy:2-alpine
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    ports: ["127.0.0.1:8080:80"]
+    depends_on: [app-a, app-b]
+    networks: [tenant-a, tenant-b]
+
+networks:
+  tenant-a:
+  tenant-b:

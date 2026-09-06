@@ -1,0 +1,5 @@
+/home/meiz/labs/c-memory-safety/vulnerable/hdrparse.c: In function ‘main’:
+/home/meiz/labs/c-memory-safety/vulnerable/hdrparse.c:96:9: error: format not a string literal and no format arguments [-Werror=format-security]
+   96 |         printf(h.note); /* CWE-134: the value is used as the format string */
+      |         ^~~~~~
+cc1: some warnings being treated as errors

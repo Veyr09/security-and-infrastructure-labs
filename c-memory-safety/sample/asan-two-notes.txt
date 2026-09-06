@@ -1,0 +1,57 @@
+=================================================================
+==756==ERROR: AddressSanitizer: heap-use-after-free on address 0x7a91cffe0070 at pc 0x7e71d1c89cf8 bp 0x7fff10c917f0 sp 0x7fff10c90fa8
+READ of size 2 at 0x7a91cffe0070 thread T0
+    #0 0x7e71d1c89cf7 in strlen ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:425
+    #1 0x5ce0a28bd1b7 in main /home/meiz/labs/c-memory-safety/vulnerable/hdrparse.c:100
+    #2 0x7e71d102a600  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a600) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #3 0x7e71d102a717 in __libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a717) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #4 0x5ce0a28bc484 in _start (/home/meiz/labs/c-memory-safety/build/hdrparse-vulnerable+0x3484) (BuildId: fba82be5158d9b83ef2fd82c253b4bb02db4dca0)
+
+0x7a91cffe0070 is located 0 bytes inside of 11-byte region [0x7a91cffe0070,0x7a91cffe007b)
+freed by thread T0 here:
+    #0 0x7e71d1d2a3ff in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x5ce0a28bd56b in main /home/meiz/labs/c-memory-safety/vulnerable/hdrparse.c:82
+    #2 0x7e71d102a600  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a600) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #3 0x7e71d102a717 in __libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a717) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #4 0x5ce0a28bc484 in _start (/home/meiz/labs/c-memory-safety/build/hdrparse-vulnerable+0x3484) (BuildId: fba82be5158d9b83ef2fd82c253b4bb02db4dca0)
+
+previously allocated by thread T0 here:
+    #0 0x7e71d1d2478c in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:617
+    #1 0x5ce0a28bd57c in main /home/meiz/labs/c-memory-safety/vulnerable/hdrparse.c:83
+    #2 0x7e71d102a600  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a600) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #3 0x7e71d102a717 in __libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a717) (BuildId: 240c8909736b31f963346aca80667fd00c551e32)
+    #4 0x5ce0a28bc484 in _start (/home/meiz/labs/c-memory-safety/build/hdrparse-vulnerable+0x3484) (BuildId: fba82be5158d9b83ef2fd82c253b4bb02db4dca0)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /home/meiz/labs/c-memory-safety/vulnerable/hdrparse.c:100 in main
+Shadow bytes around the buggy address:
+  0x7a91cffdfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7a91cffdfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7a91cffdfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7a91cffdff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7a91cffdff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7a91cffe0000: fa fa 00 00 fa fa 00 fa fa fa 06 fa fa fa[fd]fd
+  0x7a91cffe0080: fa fa 00 04 fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7a91cffe0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7a91cffe0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7a91cffe0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7a91cffe0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==756==ABORTING

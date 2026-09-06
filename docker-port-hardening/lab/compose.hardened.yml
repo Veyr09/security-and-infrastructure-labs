@@ -1,0 +1,24 @@
+# The "after" state. One character of difference that matters: the publish is
+# bound to the loopback address, so the port exists for the host and for nothing
+# else. The proxy still reaches the app over the compose network by name, which
+# is why the site keeps working when the public port disappears.
+services:
+  app:
+    image: traefik/whoami:v1.10
+    container_name: hardening-app
+    ports:
+      - "127.0.0.1:8080:80"
+    networks: [edge]
+
+  proxy:
+    image: caddy:2.8-alpine
+    container_name: hardening-proxy
+    ports:
+      - "8081:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    networks: [edge]
+    depends_on: [app]
+
+networks:
+  edge:

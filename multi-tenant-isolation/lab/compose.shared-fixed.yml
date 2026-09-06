@@ -1,0 +1,53 @@
+# Stack 2 of 3: still one database, but the application enforces the boundary.
+#
+# This is the answer to "separate databases or separate schemas?" when the
+# answer has to be one database: the tenant predicate lives in the query, and
+# each tenant signs its sessions with its own key.
+name: mti-shared-fixed
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: timesheets
+      POSTGRES_PASSWORD: lab-only-not-a-real-secret
+      POSTGRES_DB: timesheets
+    networks: [shared]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U timesheets"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  app-a:
+    build: .
+    command: ["python", "/app/fixed.py"]
+    environment:
+      TENANT_ID: tenant-a
+      SESSION_SECRET: key-for-tenant-a
+      DATABASE_URL: postgresql://timesheets:lab-only-not-a-real-secret@db:5432/timesheets
+    depends_on:
+      db: {condition: service_healthy}
+    networks: [shared]
+
+  app-b:
+    build: .
+    command: ["python", "/app/fixed.py"]
+    environment:
+      TENANT_ID: tenant-b
+      SESSION_SECRET: key-for-tenant-b
+      DATABASE_URL: postgresql://timesheets:lab-only-not-a-real-secret@db:5432/timesheets
+    depends_on:
+      db: {condition: service_healthy}
+    networks: [shared]
+
+  proxy:
+    image: caddy:2-alpine
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    ports: ["127.0.0.1:8080:80"]
+    depends_on: [app-a, app-b]
+    networks: [shared]
+
+networks:
+  shared:

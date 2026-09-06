@@ -1,0 +1,5 @@
+Name: Krystian
+Tag: release
+Roles: 1
+Role: admin
+Note: %s %s %s %s %s %s %s %s

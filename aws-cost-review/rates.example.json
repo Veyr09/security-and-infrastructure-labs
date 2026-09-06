@@ -1,0 +1,19 @@
+{
+  "_provenance": "eu-central-1 on-demand list prices. SNAPSHOT - verify against the AWS pricing pages before quoting a client. Rates are an input to this tool, not a claim made by it.",
+  "_checked": "2026-09-06",
+  "nat_gateway_hourly": 0.052,
+  "nat_gateway_per_gb": 0.052,
+  "cloudwatch_logs_storage_per_gb_month": 0.0324,
+  "rds_instance_hourly": {
+    "db.m5.2xlarge": 0.812,
+    "db.m5.xlarge": 0.406,
+    "db.m5.large": 0.203,
+    "db.t4g.large": 0.146,
+    "db.t4g.medium": 0.073
+  },
+  "rds_storage_per_gb_month": { "gp2": 0.137, "gp3": 0.1096 },
+  "ebs_per_gb_month": { "gp2": 0.119, "gp3": 0.0952 },
+  "lambda_per_gb_second": 0.0000166667,
+  "eip_idle_hourly": 0.005,
+  "hours_per_month": 730
+}

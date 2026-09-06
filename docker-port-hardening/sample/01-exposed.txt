@@ -1,0 +1,17 @@
+External port verification
+============================================================
+Probing from routable address : 192.168.1.13
+Application port              : 8080
+Proxy port                    : 8081
+
+docker port hardening-app     : 80/tcp -> 0.0.0.0:8080
+80/tcp -> [::]:8080
+docker port hardening-proxy   : 80/tcp -> 0.0.0.0:8081
+80/tcp -> [::]:8081
+
+app  on 127.0.0.1:8080        : OPEN (connected)
+app  on 192.168.1.13:8080   : OPEN (connected)
+proxy on 192.168.1.13:8081   : OPEN
+proxy serves the app          : yes (Hostname: 919d7657aa4e)
+
+VERDICT: EXPOSED - the app port answers from a routable address

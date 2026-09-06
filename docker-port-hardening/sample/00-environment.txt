@@ -1,0 +1,10 @@
+Environment for the captured runs
+================================
+Sun, Sep  6, 2026  3:04:31 AM
+
+Docker version 29.7.2, build a7dcaa6
+Docker Compose version v5.4.0
+
+Images:
+traefik/whoami:v1.10  1699d99cb4b9  10.6MB
+caddy:2.8-alpine  af32e97399fe  69.8MB

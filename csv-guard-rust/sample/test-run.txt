@@ -1,0 +1,24 @@
+     Running unittests src/main.rs (target/debug/deps/csvguard-0c609f03833508ef)
+
+running 18 tests
+test csv::tests::escaped_quote_inside_quoted_field ... ok
+test csv::tests::plain_rows ... ok
+test csv::tests::blank_lines_are_skipped ... ok
+test csv::tests::crlf_and_final_row_without_newline ... ok
+test csv::tests::empty_fields_are_preserved ... ok
+test csv::tests::embedded_newline_keeps_one_record ... ok
+test csv::tests::quoted_field_with_delimiter ... ok
+test rules::tests::decimals_reject_infinity_and_text ... ok
+test csv::tests::round_trip_quoting ... ok
+test rules::tests::bad_specs_are_rejected_with_a_useful_message ... ok
+test rules::tests::dates_must_be_real_days ... ok
+test rules::tests::enum_and_max_length ... ok
+test rules::tests::integers ... ok
+test rules::tests::leap_years ... ok
+test rules::tests::max_length_counts_characters_not_bytes ... ok
+test rules::tests::optional_columns_allow_empty ... ok
+test rules::tests::reasons_name_the_value ... ok
+test rules::tests::required_rejects_empty_and_whitespace ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

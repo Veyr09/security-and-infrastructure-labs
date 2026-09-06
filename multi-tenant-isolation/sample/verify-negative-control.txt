@@ -1,0 +1,20 @@
+# Negative control: the shared-fixed expectations, run against the
+# shared-vulnerable stack. Captured to show the probes can fail.
+#
+# The two HTTP probes are the meaningful ones: they reach whatever is listening
+# on 127.0.0.1:8080 and report what it actually did. The two docker probes fail
+# for a duller reason - they address a compose project that is not running -
+# which is why the interesting evidence is the first four lines.
+
+stack: shared-fixed
+
+  FAIL   cross_tenant_read: expected False, got True
+           tenant-a read entry 4: tenant-b / M. Dubois / Roofing, site 3
+  FAIL   token_replay: expected False, got True
+           tenant-b accepted tenant-a's token: {"tenant": "tenant-b", "session": {"tenant": "tenant-a", "user": "probe"}}
+  FAIL   db_path_open: expected True, got False
+           app-a -> db:5432 : service "app-a" is not running
+  FAIL   only_proxy_published: expected True, got False
+           published: {}
+
+4 probe(s) did not match what this stack claims
